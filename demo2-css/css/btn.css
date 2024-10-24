@@ -1,0 +1,10 @@
+input{
+    width: 60px; 
+    height: 40px;
+    background-color: yellowgreen;
+    color: white;
+    font-size: 20px;
+    font-family:'Courier New', Courier, monospace;
+    border: 2px solid green;
+    border-radius: 5px;
+    }

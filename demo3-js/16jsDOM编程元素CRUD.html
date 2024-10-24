@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+                1.获取document dom树
+                    window.document
+                2.从document中获取要操作的元素
+                    1.直接获取
+                        getElementById
+                        getElementsByTagName
+                        getElementsByName
+                        getElementsByClassName   
+                    2.间接获取
+                        .children
+                        .parent
+                        .previous
+                        .next
+                    
+                3.对元素进行操作    
+                    1. 操作元素的属性
+                    2. 操作元素的样式 元素名.style.样式名=""
+                    3. 操作元素的文本
+        
+                4. 增删元素
+                    append 后面追加
+                    insertBefore 在某个前追加
+                    replaceChild 替换某个
+                    元素.remove 删除
+
+
+
+        
+         */
+
+      function addCs(){
+        //创建一个新元素
+        var csli=document.createElement("li")
+        //设置元素的属性和文本
+        //将元素放入父元素中
+        csli.id="cs"
+        csli.innerText="长沙"
+        var cityurl=document.getElementById("city")
+        cityurl.append(csli)
+      }
+
+      function addCsBeforeSz(){
+          //创建一个新元素
+          var csli=document.createElement("li")
+        //设置元素的属性和文本
+        //将元素放入父元素中
+        csli.id="cs"
+        csli.innerText="长沙"
+        var cityurl=document.getElementById("city")
+
+        var sz=document.getElementById("sz")
+        cityurl.insertBefore(csli,sz)
+      } 
+       function replaceSz(){
+          //创建一个新元素
+          var csli=document.createElement("li")
+        //设置元素的属性和文本
+        //将元素放入父元素中
+        csli.id="cs"
+        csli.innerText="长沙"
+        var cityurl=document.getElementById("city")
+
+        var sz=document.getElementById("sz")
+        cityurl.replaceChild(csli,sz)
+      }
+      function deleteSz(){
+        var sz=document.getElementById("sz")
+        sz.remove()
+        } 
+        
+        function clearCity(){
+            var cityurl=document.getElementById("city")
+            var fc=cityurl.firstChild
+            while(fc!=null){
+                fc.remove()
+                fc=cityurl.firstChild
+            }
+    
+        }
+
+
+    </script>
+      
+</head>
+
+<body>
+    <ul id="city">
+        <li id="bj">北京</li>
+        <li id="sh">上海</li>
+        <li id="sz">深圳</li>
+        <li id="gz">广州</li>
+    </ul>
+    <button onclick="addCs()">增加长沙</button>
+    <button onclick="addCsBeforeSz()">增加深圳</button>
+    <button onclick="replaceSz()">替换深圳</button>
+    <button onclick="deleteSz()">删除深圳</button>
+    <button onclick="clearCity()">清空</button>
+</body>
+
+</html>

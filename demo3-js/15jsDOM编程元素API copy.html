@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+                1.获取document dom树
+                    window.document
+                2.从document中获取要操作的元素
+                    1.直接获取
+                        getElementById
+                        getElementsByTagName
+                        getElementsByName
+                        getElementsByClassName   
+                    2.间接获取
+                        .children
+                        .parent
+                        .previous
+                        .next
+                    
+                3.对元素进行操作    
+                    1. 操作元素的属性
+                    2. 操作属性的样式 元素名.style.样式名=""
+        
+         */
+
+         function changeAttribute(){
+            var in1=document.getElementById("in1")
+            console.log(in1.value)
+            in1.value="你好"
+            in1.type="button"
+         }
+         function changeStyle(){
+            var in1=document.getElementById("in1")
+            in1.style.color="green"
+            in1.style.borderRadius="5px"
+         }
+         function changeText(){
+            var div01=document.getElementById("div01")
+            console.log(div01.innerText)
+            console.log(div01.innerHTML)
+            div01.innerHTML="<h1>嗨</h1>"
+            //innerText 只识别文本
+            //innerHtml 还可以识别一些js代码
+         }
+
+         
+    </script>
+        <style>
+            #in1{
+                color: red;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="div01">
+        hello
+    </div>
+    <br>
+    <input type="text" value="hello" id="in1">
+    <br>
+    <button onclick="changeAttribute()">操作属性</button>
+    <button onclick="changeStyle()">操作样式</button>
+    <button onclick="changeText()">获取文本</button>
+</body>
+
+</html>

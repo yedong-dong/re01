@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 验证 */
+
+        //定义一个正则表达式
+        var reg=/o/g
+        //自定义一个字符串
+        var str="hello world"
+        //校验是否符合正则规则
+        console.log(reg.test(str))
+ 
+        var result=str.match(reg)
+        console.log(result)
+        
+
+
+        //2 替换(g)
+        var reg=/o/g
+        var str="hello world"
+        var newStr=str.replace(reg,'@')
+        console.log(newStr)
+
+        //3 忽略大小写 (i)
+        var reg=/o/gi
+        var str="hello wOrld"
+        var newStr=str.replace(reg,'@')
+        console.log(newStr)
+
+        //4 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

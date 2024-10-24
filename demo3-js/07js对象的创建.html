@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            方式1 new Object()
+
+            方式2 {属性名:属性值,... ...,函数名:function(){}}
+
+        
+        */
+        var person = new Object()
+        //  手动添加对象属性和方法
+        person.name = "张三";
+        person.age = 10;
+
+        person.eat = function (food) {
+            console.log(this.age + "岁" + this.name + "正在吃" + food)
+        }
+        console.log(person.name)
+        console.log(person.age)
+        person.eat("火锅")
+
+        var student = {
+            name: "李四",
+            age: "20",
+            eat: function (food) {
+                console.log(this.age + "岁" + this.name + "正在吃" + food)
+            }
+        }
+        student.eat("鸡翅")
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            1.数组
+                1)数组的创建 
+                2)数组的API
+                3)
+
+        */
+    //    var arr=new Array()
+    //    var arr=new Array(5)
+    //    var arr=new Array("lisi",11,false)
+    //    var arr=["lisi",11,false]
+    //    console.log(arr)
+    //    console.log(arr.length)
+    //    // 向数据中添加数据
+    //    arr[0]="zhangsan"
+    //    arr[1]=10
+    //    arr[9]=true
+    //    arr.length=20
+            var fruits=["apple","banana","orange"]
+            var fruits1=["grape","pear","cucumber"]
+            var fruitsAll=fruits.concat(fruits1)
+            console.log(fruitsAll)
+
+            var result=fruitsAll.pop()
+            console.log(result)
+            console.log(fruitsAll)
+
+            var len=fruitsAll.push("watermelon")
+            console.log(len)
+            console.log(fruitsAll)
+            var len=fruitsAll.push("pear")            
+
+
+            //查找
+            var index1=fruitsAll.indexOf('pear')
+            var index2=fruitsAll.lastIndexOf('pear')
+            console.log(index1)
+            console.log(index2)
+
+            //反转数组
+            fruitsAll.reverse()
+            console.log(fruitsAll)
+
+            //转换成字符串
+            console.log(fruitsAll.join(","))
+
+            //截取,选取数组中的一部分
+            console.log(fruitsAll.slice(2,4))//左闭右开
+
+            //从数组中添加或者删除元素
+
+            // 删除
+            console.log(fruitsAll)
+            fruitsAll.splice(2,0,"el1","el2") //2表示的是从索引第几开始操作 0表示删除0个
+            console.log(fruitsAll)
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

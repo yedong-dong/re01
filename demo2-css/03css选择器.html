@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        1 元素选择器 根据标签的名字来确定样式的作用元素
+            语法：标签名{}
+            缺点：某些同名的元素不希望选择某些样式，某些不同名的元素也使用该样式，都无法协调
+
+        2 id选择器   根据标签的id值确定样式的作用元素
+                     一般每个元素都由id属性，id具有唯一性
+                语法：#id{}
+                缺点：id值唯一性
+        
+        3 class选择器 根据元素的class属性值，确定样式的作用元素     
+                        元素的class属性值可以重复 而且一个元素的class属性可以有多个值           
+                    语法：.class属性值{}
+        */
+        #btn3{
+            width: 80px;
+            height: 40px;
+            background-color: chartreuse;
+            color: white;
+            border: 3px solid green;
+            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 30px;
+            border-radius: 5px;
+        }
+        /* input{
+            width: 80px;
+            height: 40px;
+            background-color: chartreuse;
+            color: white;
+            border: 3px solid green;
+            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 30px;
+            border-radius: 5px;
+        } */
+
+        .shapeClass{
+            width: 80px;
+            height: 40;
+            border-radius: 5px;
+        }
+        .colorClass{
+            background-color: rgb(179, 241, 85);
+            color: white;
+            border: 5px;
+        }
+        .fontClass{
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            list-style: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <input type="button" id="btn1" class="shapeClass colorClass fontClass" value="按钮"/>
+    <input type="button" id="btn2" value="按钮"/>
+    <input type="button" id="btn3" value="按钮"/>
+    <input type="button" id="btn4" value="按钮"/>
+    <button id="btn5"></button>
+</body>
+</html>

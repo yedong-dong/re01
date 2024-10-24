@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+    
+    
+    
+    
+    
+    -->
+    <script>
+        function fun1(){
+            window.alert("哈喽")
+        }
+        function fun2(){
+            var name=window.prompt("hello,请输入姓名")
+            console.log(name)
+        }
+        function fun3(){
+            var res=window.confirm("确定要删除吗")
+            console.log(res)
+        }
+        function fun4(){
+            window.setTimeout(function(){
+                console.log("你好呀")
+            },2000)
+        }   
+        function funA(){
+            window.history.back()
+            //向后翻页
+        }
+        function funB(){
+            window.history.forward()
+            // window.go(1)
+            //向前翻页
+        }
+        function funC(){
+            location.href="http://www.atguigu.com" //修改地址栏的url
+        }
+        function funD(){
+            //向seesionStorage中存储数据
+            sessionStorage.setItem("keya","ValueA")
+            //向localStorage中存储数据
+            localStorage.setItem("keyb","ValueB")
+        }
+        function funE(){
+            console.log(sessionStorage.getItem("keya"))
+            console.log(localStorage.getItem("keyb"))
+        }
+        function funF(){
+            sessionStorage.clear()
+            localStorage.clear()
+        }
+    </script>
+</head>
+<body>
+    <button onclick="funD()">存储数据</button>
+    <button onclick="funE()">读取数据</button>
+    <button onclick="funF()">清空数据</button>
+    <hr>
+    <button onclick="funC()">尚硅谷</button>
+    <hr>
+    <button onclick="funA()">上一页</button>
+    <button onclick="funB()">下一页</button>
+    <a href="http://www.baidu.com">百度一下,你就知道</a>
+    <hr>
+    <button onclick="fun1()">按钮1</button>
+    <button onclick="fun2()">按钮2</button>
+    <button onclick="fun3()">按钮3</button>
+    <button onclick="fun4()">两秒后显示弹窗</button>
+</body>
+</html>

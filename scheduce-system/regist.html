@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <style>
+        .ht {
+            text-align: center;
+            color: cadetblue;
+            font-family: 幼圆;
+        }
+
+        .tab {
+            width: 500px;
+            border: 5px solid cadetblue;
+            margin: 0px auto;
+            border-radius: 5px;
+            font-family: 幼圆;
+        }
+
+        .ltr td {
+            border: 1px solid powderblue;
+
+        }
+
+        .ipt {
+            border: 0px;
+            width: 50%;
+
+        }
+
+        .btn1 {
+            border: 2px solid powderblue;
+            border-radius: 4px;
+            width: 60px;
+            background-color: antiquewhite;
+
+        }
+
+        .msg {
+            color: gold;
+        }
+
+        .buttonContainer {
+            text-align: center;
+        }
+    </style>
+    <script>
+        function checkUsername() {
+            var usernameReg = /^[a-zA-Z0-9]{5,10}$/
+            var usernameInput = document.getElementById("usernameInput")
+            var username = usernameInput.value
+            var usernameMsg = document.getElementById("usernameMsg")
+            if (!usernameReg.test(username)) {
+                usernameMsg.innerText = "用户名输入有误"
+                return false
+            }
+            usernameMsg.innerText = "OK"
+            return true
+        }
+
+        function checkUserPwd() {
+            var userPwdReg = /^[0-9]{6}$/
+            var userPwdInput = document.getElementById("userPwdInput")
+            var userPwd = userPwdInput.value
+            var userPwdMsg = document.getElementById("userPswMsg")
+            if (!userPwdReg.test(userPwd)) {
+                userPwdMsg.innerText = "密码必须是六位数字"
+                return false
+            }
+            userPwdMsg.innerText = "OK"
+            return true
+        }
+        function checkUserPwd2() {
+            var userPwdReg = /^[0-9]{6}$/
+            //获取确认密码输入
+            var userPwdInput2 = document.getElementById("userPwdInput2")
+            var userPwd2 = userPwdInput2.value
+
+            //获得输入密码输入
+            var userPwdInput = document.getElementById("userPwdInput")
+            var userPwd = userPwdInput.value
+
+            var userPwdMsg2 = document.getElementById("userPswMsg2")
+ 
+
+            // if(!userPwdReg.test(userPwd2)){
+            //     userPwdMsg.innerText="密码必须是六位数字"
+            //     return false
+            // }
+        
+            if (userPwd != userPwd2) {
+                userPwdMsg2.innerText = "两次密码不一致"
+                return false
+            }
+            userPwdMsg2.innerText = "OK"
+            return true
+         
+        }
+
+
+        function checkForm() {
+            var flag3 =checkUsername()
+            var flag1 = checkUserPwd()
+            var flag2 = checkUserPwd2()
+
+            return flag1 && flag2 &&flag3
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1 class="ht">欢迎使用日志管理系统</h1>
+    <h3 class="ht">请注册</h3>
+
+    <form method="post" action="/user/login" onsubmit="return checkForm()">
+        <table class="tab">
+            <tr class="ltr">
+                <td>请输入账号</td>
+                <td>
+                    <input type="text" id="usernameInput" name="username" onblur="checkUsername()">
+                    <span id="usernameMsg"></span>
+                </td>
+            </tr>
+            <tr class="ltr">
+                <td>请输入密码</td>
+                <td>
+                    <input type="password" class="ipt" id="userPwdInput" name="userPwd" onblur="checkUserPwd()">
+                    <span id="userPswMsg"></span>
+                </td>
+            </tr>
+            <tr class="ltr">
+                <td>确认密码</td>
+                <td>
+                    <input type="password" class="ipt" id="userPwdInput2" name="userPwd2" onblur="checkUserPwd2()">
+                    <span id="userPswMsg2"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="ltr">
+                <td colspan="2" class="buttonContainer">
+                    <input type="submit" value="注册" class="btn1">
+                    <input type="reset" value="重置" class="btn1">
+                    <button class="btn1">
+                        <a href="login.html">去登录</a>
+                    </button>
+                </td>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Json格式的语法
+            var personStr='{"属性名":"属性值",..}'
+            键值对的形式,字符串的类型        
+        */
+       var personStr='{"name":"张三","age":10,"dog":{"dname":"小花"},"loveSinger":["小明","小东","小黑"],"friends":[{"fname":"赵四"},{"fname":"王五"}]}'
+        console.log(personStr)
+        console.log(typeof personStr)                                                   
+
+        //通过json.parse()可以将json串转换为一个对象
+        var result=JSON.parse(personStr)
+        console.log(typeof result)
+        console.log(result)
+        console.log(result.name)
+        console.log(result.loveSinger[0])
+        console.log(result.friends[0].fname)
+
+        //通过json.stringify() 将一个对象转换为json
+        var personStr2=JSON.stringify(result)
+        console.log(personStr2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

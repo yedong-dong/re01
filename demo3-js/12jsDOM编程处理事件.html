@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /*
+           1 事件的绑定方式
+               1 通过元素的属性绑定 on***
+               2 通过DOM编程动态绑定
+               注意事项:
+                   1 一个事件可以绑定多个函数
+                   2 一个函数可以绑定多个事件
+           
+           2 常见的事件
+               1 鼠标事件 onclick ondbclick onmouseover onmousemove onmouseleave    
+               2 键盘事件 onkeydown onkeyup            
+               3 表单事件 onsubmit onreset
+               4 页面加载事件 onload
+
+           3 事件的触发
+               1 行为触发
+               2 DOM编程触发   
+               
+               
+       */
+    </script>
+    <script>
+        window.onload = function () {
+            
+             var div1=document.getElementById("d1")
+             div1.onclick = function(){
+                 div1.style.backgroundColor="red"
+             }
+
+            var btn = document.getElementById("btn1")
+            btn.onclick = function () {
+                alert("按钮单击了")
+
+                //通过dom编程触发事件,相当于某些事件发生了
+                //通过dom编程来触发div的单击事件
+                div1.onclick()
+            }
+        }
+
+    
+    </script>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 255, 0);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="d1" class="div1">
+    </div>
+    <button id="btn1">按钮</button>
+</body>
+
+</html>

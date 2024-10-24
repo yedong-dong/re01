@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.write("张三")
+        document.write("<hr>")
+
+     /*    var i = 1;
+        while(i<=9){
+            var j = 1;
+            while(j<=i){
+                document.write(j+"*"+i+"="+(j*i)+"&nbsp;&nbsp;&nbsp;")
+                j++
+            }
+            document.write("<hr>")
+            i++
+        } */
+
+        
+        // for(var i=1;i<=9;i++){
+        //     for(var j =1;j<=i;j++){
+        //         document.write(j+"*"+i+"="+(j*i)+"&nbsp;&nbsp;&nbsp;")
+        //     }
+        //     document.write("<hr>")
+        // }
+
+        var arr=["北京","shanghai","beijing"]
+        document.write("<ul>")
+        for(var index in arr){
+               document.write("<li>"+arr[index]+"</li>") 
+        }
+        document.write("</ul>") 
+
+        for(var index in arr){
+            console.log(index)
+        } 
+     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
